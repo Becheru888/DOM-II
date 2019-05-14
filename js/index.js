@@ -35,7 +35,7 @@ const load = document.querySelector('.loaded')
 
 window.addEventListener('load', loading)
 
-function loading(){
+function loading() {
     load.textContent = 'Page Fully Loaded!'
 }
 
@@ -44,11 +44,11 @@ function loading(){
 const password = document.querySelector('input[type="password"]');
 
 password.addEventListener('focus', (event) => {
-  event.target.style.background = 'pink';    
+    event.target.style.background = 'pink';
 });
 
 password.addEventListener('blur', (event) => {
-  event.target.style.background = '';    
+    event.target.style.background = '';
 });
 
 // Resize event
@@ -59,8 +59,8 @@ const heightOutput = document.querySelector('#height');
 const widthOutput = document.querySelector('#width');
 
 function reportWindowSize() {
-  heightOutput.textContent = window.innerHeight;
-  widthOutput.textContent = window.innerWidth;
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
 }
 
 window.onresize = reportWindowSize;
@@ -68,7 +68,15 @@ window.onresize = reportWindowSize;
 // Scroll Event
 
 window.addEventListener('scroll', () => {
-console.log('Srolled')
+    console.log('Srolled')
 })
 
-//
+//Select event
+
+var par = document.querySelector('#story');
+
+par.addEventListener('select', () => {
+    alert('Text selected')
+});
+
+
