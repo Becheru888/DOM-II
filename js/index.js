@@ -79,4 +79,12 @@ par.addEventListener('select', () => {
     alert('Text selected')
 });
 
+//dblclick event
 
+var dblclick = document.querySelector('.main-navigation');
+
+dblclick.addEventListener('dblclick', dbl)
+
+function dbl(){
+    dblclick.style.background = 'red'
+}
