@@ -50,3 +50,25 @@ password.addEventListener('focus', (event) => {
 password.addEventListener('blur', (event) => {
   event.target.style.background = '';    
 });
+
+// Resize event
+
+window.addEventListener('resize', reportWindowSize);
+
+const heightOutput = document.querySelector('#height');
+const widthOutput = document.querySelector('#width');
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
+
+// Scroll Event
+
+window.addEventListener('scroll', () => {
+console.log('Srolled')
+})
+
+//
