@@ -88,3 +88,34 @@ dblclick.addEventListener('dblclick', dbl)
 function dbl(){
     dblclick.style.background = 'red'
 }
+
+// Drag/Drop
+
+var draggableBTN = document.querySelector('.draggable')
+var dropeZone = document.querySelector('.dropzone')
+
+draggableBTN.addEventListener("dragstart", function(event) {
+    // store a ref. on the dragged elem
+    dragged = event.target;
+    // make it half transparent
+    event.target.style.opacity = .5;
+    event.dataTransfer.setData('text', event.target.id)
+  } );
+
+//   draggableBTN.addEventListener("dragend", function(event) {
+//     // reset the transparency
+//     event.target.style.opacity = 1;
+//   }, false);
+
+  dropeZone.addEventListener("dragover", function(event) {
+    // prevent default to allow drop
+    event.preventDefault();
+  } );
+
+  dropeZone.addEventListener("dragenter", function( event ) {
+    // highlight potential drop target when the draggable element enters it
+    event.dataTransfer.getData("text")
+
+} );
+
+  console.log(dropeZone)
