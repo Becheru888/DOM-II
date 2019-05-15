@@ -65,7 +65,7 @@ function reportWindowSize() {
 
 window.onresize = reportWindowSize;
 
-// Scroll Event
+// Scroll Event (see in the console)
 
 window.addEventListener('scroll', () => {
     console.log('Srolled')
@@ -94,28 +94,24 @@ function dbl(){
 var draggableBTN = document.querySelector('.draggable')
 var dropeZone = document.querySelector('.dropzone')
 
-draggableBTN.addEventListener("dragstart", function(event) {
-    // store a ref. on the dragged elem
-    dragged = event.target;
-    // make it half transparent
-    event.target.style.opacity = .5;
-    event.dataTransfer.setData('text', event.target.id)
-  } );
+// Two similar events nested.
 
-//   draggableBTN.addEventListener("dragend", function(event) {
-//     // reset the transparency
-//     event.target.style.opacity = 1;
-//   }, false);
+const button = document.querySelector('.select')
+const buttonParent = document.querySelector(".text-content")
+const sectionContent = document.querySelector(".content-section")
 
-  dropeZone.addEventListener("dragover", function(event) {
-    // prevent default to allow drop
-    event.preventDefault();
-  } );
+button.addEventListener('click', () => {
+    console.log('Button Pressed')
+})
 
-  dropeZone.addEventListener("dragenter", function( event ) {
-    // highlight potential drop target when the draggable element enters it
-    event.dataTransfer.getData("text")
+buttonParent.addEventListener('click', eve => {
+    eve.stopPropagation();
+    console.log('Parrent triggered');
+})
 
-} );
+//Event stopt
+sectionContent.addEventListener('click',() => {
+    console.log('Section Content triggered!')
+})
 
-  console.log(dropeZone)
+
